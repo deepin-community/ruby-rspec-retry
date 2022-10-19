@@ -1,0 +1,25 @@
+From: Jérémy Bobbio <lunar@debian.org>
+Date: Tue, 26 Mar 2013 17:57:08 +0000
+Subject: Do not use pry-debugger to run specs
+
+Forwarded: not-needed
+---
+ spec/spec_helper.rb | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/spec/spec_helper.rb b/spec/spec_helper.rb
+index b84a5ca..f65b27e 100644
+--- a/spec/spec_helper.rb
++++ b/spec/spec_helper.rb
+@@ -2,11 +2,6 @@ require 'rspec'
+ require 'rspec/core/sandbox'
+ 
+ require 'rspec/retry'
+-if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('2')
+-  require "pry-debugger"
+-else
+-  require "pry-byebug"
+-end
+ 
+ RSpec.configure do |config|
+   config.verbose_retry = true

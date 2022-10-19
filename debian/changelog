@@ -1,0 +1,126 @@
+ruby-rspec-retry (0.6.2-2) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>  Wed, 20 Jul 2022 16:53:43 +0800
+
+ruby-rspec-retry (0.6.2-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Daniel Leidert ]
+  * d/control: Add Testsuite and Rules-Requires-Root fields.
+    (Build-Depends): Bump debhelper to version 13.
+    (Standards-Version): Bump to 4.6.0.
+    (Depends): Remove interpreters and use ${ruby:Depends}.
+  * d/copyright: Add Upstream-Contact field.
+    (Copyright): Add team.
+  * d/rules: Use gem installation layout and install upstream changelog.
+  * d/watch: Bump to version 4.
+  * d/patches/0002-Workaround-class-variable-issues.patch: Add patch.
+    - Work around the usage of class variables in tests (closes: #996378).
+  * d/patches/series: Enable new patch.
+  * d/tests/*: Remove files in favor of Testsuite field in d/control.
+  * d/upstream/metadata: Add missing fields.
+
+ -- Daniel Leidert <dleidert@debian.org>  Sat, 27 Nov 2021 05:39:26 +0100
+
+ruby-rspec-retry (0.6.2-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Utkarsh Gupta ]
+  * Add salsa-ci.yml
+
+  [ Pirate Praveen ]
+  * New upstream version 0.6.2
+  * Move debian/watch to gemwatch.debian.net
+  * Bump Standards-Version to 4.5.0 (no changes needed)
+  * Drop compat file, rely on debhelper-compat and bump compat level to 12
+
+ -- Pirate Praveen <praveen@debian.org>  Mon, 24 Feb 2020 21:28:47 +0530
+
+ruby-rspec-retry (0.5.7-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ HIGUCHI Daisuke (VDR dai) ]
+  * New upstream release.
+  * d/tests/: use quilt.
+
+ -- HIGUCHI Daisuke (VDR dai) <dai@debian.org>  Sat, 17 Mar 2018 00:39:47 +0900
+
+ruby-rspec-retry (0.5.6-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ HIGUCHI Daisuke (VDR dai) ]
+  * New upstream release.
+  - added support for rspec 3.7.0 (Closes: #890698).
+  * support autopkgtest.
+  * eliminate lintian warning: debian-watch-uses-insecure-uri
+  * eliminate lintian warning: insecure-copyright-format-uri
+  * Move Vcs-* to salsa.debian.org.
+  * Bump debhelper compatibility level to 11.
+  * Update Standards-Version to 4.1.3.
+
+ -- HIGUCHI Daisuke (VDR dai) <dai@debian.org>  Sun, 25 Feb 2018 11:48:37 +0900
+
+ruby-rspec-retry (0.5.2-1) unstable; urgency=medium
+
+  [ Jérémy Bobbio ]
+  * New upstream release.
+  * Refresh patches.
+
+  [ Pirate Praveen ]
+  * Bump Standards-Version to 3.9.8, no changes required.
+
+ -- Jérémy Bobbio <lunar@debian.org>  Thu, 01 Dec 2016 10:54:28 +0100
+
+ruby-rspec-retry (0.4.5-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+
+ -- Pirate Praveen <praveen@debian.org>  Fri, 30 Sep 2016 22:35:03 +0530
+
+ruby-rspec-retry (0.4.3-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Update homepage location.
+  * Update debian/copyright.
+  * Switch to debhelper compat level 9.
+
+ -- Jérémy Bobbio <lunar@debian.org>  Wed, 09 Sep 2015 23:12:14 +0200
+
+ruby-rspec-retry (0.4.2-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+    - fixes the test suite (Closes: #794135)
+  * Refresh patches
+  * Update packaging with a new dh-make-ruby run
+
+ -- Antonio Terceiro <terceiro@debian.org>  Sat, 08 Aug 2015 09:54:20 -0300
+
+ruby-rspec-retry (0.3.0-1) unstable; urgency=low
+
+  [ Jérémy Bobbio ]
+  * New upstream version.
+  * Remove obsolete patch.
+  * Bump Standards-Version, no changes required.
+
+  [ Cédric Boutillier ]
+  * Use canonical URI in Vcs-* fields.
+
+ -- Jérémy Bobbio <lunar@debian.org>  Sat, 03 May 2014 15:47:17 +0200
+
+ruby-rspec-retry (0.2.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #704002)
+
+ -- Jérémy Bobbio <lunar@debian.org>  Wed, 27 Mar 2013 16:39:15 +0100

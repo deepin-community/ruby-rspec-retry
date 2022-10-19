@@ -1,0 +1,54 @@
+From: Daniel Leidert <dleidert@debian.org>
+Date: Sat, 27 Nov 2021 05:12:38 +0100
+Subject: Workaround class variable issues
+
+Bug-Debian: https://bugs.debian.org/996378
+---
+ spec/lib/rspec/retry_spec.rb | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/spec/lib/rspec/retry_spec.rb b/spec/lib/rspec/retry_spec.rb
+index f008f69..7984c8e 100644
+--- a/spec/lib/rspec/retry_spec.rb
++++ b/spec/lib/rspec/retry_spec.rb
+@@ -66,13 +66,13 @@ describe RSpec::Retry do
+     end
+ 
+     context 'with :retry => 0' do
+-      after(:all) { @@this_ran_once = nil }
++      after(:all) { $this_ran_once = nil }
+       it 'should still run once', retry: 0 do
+-        @@this_ran_once = true
++        $this_ran_once  = true
+       end
+ 
+       it 'should run have run once' do
+-        expect(@@this_ran_once).to be true
++        expect($this_ran_once ).to be true
+       end
+     end
+ 
+@@ -336,12 +336,12 @@ describe RSpec::Retry do
+     let!(:example_group) do
+       RSpec.describe do
+         before :all do
+-          @@results = {}
++          $results = {}
+         end
+ 
+         around do |example|
+           example.run_with_retry
+-          @@results[example.description] = [example.exception.nil?, example.attempts]
++          $results[example.description] = [example.exception.nil?, example.attempts]
+         end
+ 
+         specify 'without retry option' do
+@@ -356,7 +356,7 @@ describe RSpec::Retry do
+ 
+     it 'should be exposed' do
+       example_group.run
+-      expect(example_group.class_variable_get(:@@results)).to eq({
++      expect($results).to eq({
+         'without retry option' => [true, 1],
+         'with retry option' => [false, 3]
+       })
